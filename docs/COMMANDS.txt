@@ -1,0 +1,129 @@
+﻿SASS COMMANDS
+
+Convert for one time
+* cd → go to path of the file
+* sass input.scss output.css [input and output are files in the same dir]
+
+Convert all the time (using --watch command)
+* sass --watch input.scss:output.css [you can specify another file pathes sass --watch scss/x.scss:css/y.css]
+
+Nesting the selectors in Sass
+
+// this is an example
+.parent {
+  color: blue;
+  .child {
+    font-size: 12px;
+  }
+}
+
+// the output of above scss file is:
+.parent {
+  color: blue;
+}
+
+.parent .child {
+    font-size: 12px;
+}
+
+* Nesting allows you to see the clear DOM relationship between two selectors while also removing the repetition observed in CSS.
+
+* In SCSS, nesting is not limited only to selectors. You can also nest common CSS properties if you append a : colon suffix after the name of the property.
+
+// example
+.parent {
+  font : {
+    family: Roboto, sans-serif;
+    size: 12px;
+    decoration: none;
+  }
+}
+
+
+Using variables
+* using variables in sass allows you to change all values from one place!
+* variables generally built at the top of the sass doc
+* Data types of vars in sass
+- Numbers: 1.5, 88, 14px
+- Boleans: true, false
+- String: "potato", "tomato", Tahoma (with and without quotes)
+- Color: rgba(0, 0, 0, .9) or #fff
+- Null: no value for the var
+- Lists: Lists can be separated by either spaces or commas
+[1.5em Helvetica bold;] or [Helvetica, Arial, sans-serif;]
+- Maps: Maps are very similar to lists, but instead each object is a key-value pair
+[(key1: value1, key2: value2);]
+
+Using & character
+In Sass, the & character is used to specify exactly where a parent selector should be inserted. It also helps write psuedo classes in a much less repetitive way.
+
+// example
+.notecard{ 
+  &:hover{
+      @include transform (rotatey(-180deg));  
+    }
+  }
+
+// please revise the above code!
+
+Mixin
+* In Sass, a mixin lets you make groups of CSS declarations that you want to reuse throughout your site.
+
+@mixin backface-visibility {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+}
+
+// this won't be compiled to css file
+// to reuse the mixin, we use @include mixinName; [@include backface-visibility;]
+
+Mixins: Arguments
+* Mixins also have the ability to take in a value.
+* An argument, or parameter, is a value passed to the mixin that will be used inside the mixin, such as $visibility in this example:
+
+// @visibility can be changed to $hidden
+@mixin backface-visibility($visibility) {
+  backface-visibility: $visibility;
+  -webkit-backface-visibility: $visibility;
+  -moz-backface-visibility: $visibility;
+  -ms-backface-visibility: $visibility;
+  -o-backface-visibility: $visibility;
+}
+
+// call the mixin
+@include backface-visibility(hidden);
+
+// Assing a default value of the mixin, will be put if the mixin included without passing a value
+// the default value here is: $visibility: hidden
+@mixin backface-visibility($visibility: hidden) {
+   backface-visibility: $visibility;
+  -webkit-backface-visibility: $visibility;
+  -moz-backface-visibility: $visibility;
+  -ms-backface-visibility: $visibility;
+  -o-backface-visibility: $visibility;
+}
+
+Mixin Facts
+In general, here are 5 important facts about arguments and mixins:
+
+1. Mixins can take multiple arguments.
+2. Sass allows you to explicitly define each argument in your @include statement.
+
+@mixin dashed-border($width, $color: #FFF) {
+  border: {
+     color: $color;
+     width: $width;
+     style: dashed;
+  }
+}
+
+div { //passes out of order but explicitly defined
+   @include dashed-border(color: purple, width: 5px); 
+}
+
+3. When values are explicitly specified you can send them out of order.
+4. If a mixin definition has a combination of arguments with and without a default value, you should define the ones with no default value first.
+5. Mixins can be nested.

@@ -1,0 +1,115 @@
+// this is the course of learn sass in 5 minutes
+// We use @extend to use the same function already declared
+
+@import 'partials/reset'; // no need to type the extension and the (_) underscore sign
+
+.firstClass {
+  color: #fff;
+  background: #000;
+  font-family: Arial;
+}
+
+.secondClass {
+  @extend .firstClass;
+  border: 1px solid #ccc; // adding another property to the second class
+}
+
+// variables are buckets that store information that we want to reuse without re declaring theme
+$bgColor: #000;
+$mainColor: #f00;
+$headFont: 48px;
+
+.heading {
+  background: $bgColor;
+  color: $mainColor;
+  font: { // using the sub property feature
+    size: $headFont;
+    family: Arial;
+    weight: bold;
+  }
+}
+
+// using the nested feature
+a {
+  font-family: sans-serif;
+  color: $mainColor;
+  &:hover,
+  &:active {
+    color: $bgColor;
+  }
+  &.another-class {
+    color: $mainColor;
+    &:hover,
+    &:focus,
+    &:active {
+      color: green;
+    }
+  }
+}
+
+// Operators & Functions
+$container: 1300px;
+$padding: 25px;
+
+// using Operators
+.half {
+  height: $container / 2;
+  width: $container / 2 + $padding;
+}
+
+.half2 {
+  height: $container / 3 + $padding / 4;
+}
+
+// using function: there's a better way to change the numberd dynamically
+@function half-height($first, $second) {
+  @return $container / $first + $padding / $second;
+}
+
+.half3 {
+  height: half-height(2,2);
+  width: half-height(1,1);
+}
+
+// Mixens: variables that can be store and re called to be used dynamically
+@mixin translateX ($val) {
+  -webkit-transform: translateX($val);
+  -moz-transform: translateX($val);
+  -o-transform: translateX($val);
+  -ms-transform: translateX($val);
+  transform: translateX($val);
+}
+
+.translateX {
+  @include translateX(10px);
+}
+
+.tranaformX {
+  @include translateX(14px);
+}
+
+// determine a default value for the mixin or Functions
+@mixin animate-time($time: 500ms) {
+  -webkit-transition: $time ease;
+  -moz-transition: $time ease;
+  -o-transition: $time ease;
+  -ms-transition: $time ease;
+  transition: $time ease;
+}
+
+.box1 {
+  @include animate-time;
+}
+
+.box2 {
+  @include animate-time(300ms);
+}
+
+.box3 {
+  @include animate-time;
+}
+
+// Loops
+
+// For loop
+// @for $var from <start> through <end>

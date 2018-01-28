@@ -1,0 +1,68 @@
+.half1 {
+  height: 597.5px;
+}
+
+.half2 {
+  width: 597.5px;
+}
+
+.first-class, .second-class {
+  color: #000;
+  text-decoration: underline;
+  font-family: Arial;
+}
+
+.second-class {
+  border-radius: 10px;
+  border-width: 2px;
+}
+
+a {
+  font-family: sans-serif;
+  color: #000;
+}
+a:hover, a:focus, a:active {
+  color: blue;
+}
+
+.parent {
+  background: #f00;
+}
+.parent .class1 {
+  background: #080;
+}
+.parent .class2 {
+  background: yellow;
+}
+.parent:hover {
+  background: blue;
+}
+
+.class3, .class4 {
+  background: #ccc;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #f80;
+  border-radius: 5px;
+}
+
+.class6 {
+  background: blue;
+  margin: 10px;
+}
+
+.div-border {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.classFont {
+  font-size: 20px;
+  font-family: Verdana;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */

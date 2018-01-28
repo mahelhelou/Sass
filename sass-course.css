@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.firstClass, .secondClass {
+  color: #fff;
+  background: #000;
+  font-family: Arial;
+}
+
+.secondClass {
+  border: 1px solid #ccc;
+}
+
+.heading {
+  background: #000;
+  color: #f00;
+  font-size: 48px;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+a {
+  font-family: sans-serif;
+  color: #f00;
+}
+a:hover, a:active {
+  color: #000;
+}
+a.another-class {
+  color: #f00;
+}
+a.another-class:hover, a.another-class:focus, a.another-class:active {
+  color: green;
+}
+
+.half {
+  height: 650px;
+  width: 675px;
+}
+
+.half2 {
+  height: 439.5833333333px;
+}
+
+.half3 {
+  height: 662.5px;
+  width: 1325px;
+}
+
+.translateX {
+  -webkit-transform: translateX(10px);
+  -moz-transform: translateX(10px);
+  -o-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.tranaformX {
+  -webkit-transform: translateX(14px);
+  -moz-transform: translateX(14px);
+  -o-transform: translateX(14px);
+  -ms-transform: translateX(14px);
+  transform: translateX(14px);
+}
+
+.box1 {
+  -webkit-transition: 500ms ease;
+  -moz-transition: 500ms ease;
+  -o-transition: 500ms ease;
+  -ms-transition: 500ms ease;
+  transition: 500ms ease;
+}
+
+.box2 {
+  -webkit-transition: 300ms ease;
+  -moz-transition: 300ms ease;
+  -o-transition: 300ms ease;
+  -ms-transition: 300ms ease;
+  transition: 300ms ease;
+}
+
+.box3 {
+  -webkit-transition: 500ms ease;
+  -moz-transition: 500ms ease;
+  -o-transition: 500ms ease;
+  -ms-transition: 500ms ease;
+  transition: 500ms ease;
+}
+
+/*# sourceMappingURL=sass-course.css.map */

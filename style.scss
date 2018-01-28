@@ -1,0 +1,96 @@
+$main-color: #000;
+$border-width: 2px;
+$blue-color: blue;
+$container: 1170px;
+$padding: 25px;
+$direction: ltr;
+$floatleft: left;
+$floatright: right;
+
+@function half-height ($first, $second) {
+	@return $container /$first + $padding /$second ;
+}
+
+.half1 {
+	height: half-height(2, 2)
+}
+.half2 {
+	width: $container / 2 + $padding / 2;
+}
+.first-class {
+	color: $main-color;
+	text-decoration: underline;
+	font-family: Arial;
+}
+
+.second-class {
+	@extend .first-class;
+	border-radius: 10px;
+	border-width: $border-width;
+}
+
+a {
+	font-family: sans-serif;
+	color: $main-color;
+		&:hover,
+		&:focus,
+		&:active {
+		color: $blue-color;
+		}
+}
+
+.parent {
+	background: #f00;
+	.class1 {
+		background: #080;
+	}
+	.class2 {
+		background: yellow;
+	}
+	&:hover {
+		background: blue;
+	}
+}
+
+.class3 {
+	background: #ccc;
+	font-size: 20px;
+	font-family: Arial, sans-serif;
+	border: 1px solid #f80;
+	border-radius: 5px;
+}
+
+.class4 {
+	@extend .class3
+}
+
+// this is for not rendering the selector but only for using it (similar to class used with extend)
+
+%cover {
+	background: blue;
+	margin: 10px;
+}
+
+.class6 {
+	@extend %cover;
+}
+
+@mixin bRadius($r) {
+	-webkit-border-radius: $r;
+	-moz-border-radius: $r;
+	-o-border-radius: $r;
+	-ms-border-radius: $r;
+	border-radius: $r;
+}
+
+.div-border {
+	@include bRadius(10px);
+}
+
+.classFont {
+	font: {
+		size: 20px;
+		family: Verdana;
+		weight: bold;
+	}
+}

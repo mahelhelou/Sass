@@ -1,0 +1,156 @@
+/* IMPORTS */
+html, body {
+  padding: 0;
+  margin: 0; }
+
+/* LIST ALL VARIABLES HERE */
+/* Using Mixins */
+/*
+    Mixins used to:
+    - Avdoiding repeative data and prefixes declarations
+    - Avdoing repeating any other repeating data
+*/
+/* Declaring the normal mixin */
+/* Mixin with a dynamic value */
+/* declaring stage */
+/* Mixin with a default value and dynamic value */
+/* declaring stage */
+/* Starting the commands and style */
+.first-class, .second-class {
+  font-family: 'Times New Roman', sans-serif;
+  font-weight: 500;
+  background: #f00;
+  color: #f7f7f7; }
+
+/* Extned the same properties from .first-class selector */
+/* Use --watch to automatically update the changes */
+.second-class {
+  border-radius: 20px; }
+
+.third-class {
+  color: #f00;
+  border-width: 2px; }
+
+/* using indentation for links */
+a {
+  color: #f00; }
+  a:hover {
+    color: #00f; }
+  a:focus, a:visited {
+    color: #333; }
+
+/* Using operations */
+.forth-class {
+  height: 720px;
+  padding: 25px;
+  width: 732.5px; }
+
+/* Make function and pass value */
+.half {
+  height: 732.5px; }
+
+.half2 {
+  height: 732.5px; }
+
+/*
+==========================================
+            MIXINS
+==========================================
+*/
+/* please note that declaration is separated in the mixins partial file */
+/* using stage */
+.translateX {
+  -webkit-transform: translateX(10px);
+  -moz-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  -o-transform: translateX(10px);
+  transform: translateX(10px); }
+
+/* using stage */
+.translateY {
+  -webkit-transform: translateY(14px);
+  -moz-transform: translateY(14px);
+  -ms-transform: translateY(14px);
+  -o-transform: translateY(14px);
+  transform: translateY(14px); }
+
+/* using stage */
+.translate3d {
+  /* you can't leave the value empty */
+  /* using dynamic value */
+  -webkit-transform: translate3d(40px);
+  -moz-transform: translate3d(40px);
+  -ms-transform: translate3d(40px);
+  -o-transform: translate3d(40px);
+  transform: translate3d(40px);
+  /* using default value */
+  -webkit-transform: translate3d(25px);
+  -moz-transform: translate3d(25px);
+  -ms-transform: translate3d(25px);
+  -o-transform: translate3d(25px);
+  transform: translate3d(25px); }
+
+/*
+==========================================
+            LOOPS
+==========================================
+*/
+/* FOR loop */
+/* using stage */
+.pt-1 {
+  padding-top: 10px; }
+
+.pb-1 {
+  padding-bottom: 10px; }
+
+.column-1 {
+  width: 100%; }
+
+.pt-2 {
+  padding-top: 20px; }
+
+.pb-2 {
+  padding-bottom: 20px; }
+
+.column-2 {
+  width: 50%; }
+
+.pt-3 {
+  padding-top: 30px; }
+
+.pb-3 {
+  padding-bottom: 30px; }
+
+.column-3 {
+  width: 33.3333333333%; }
+
+.pt-4 {
+  padding-top: 40px; }
+
+.pb-4 {
+  padding-bottom: 40px; }
+
+.column-4 {
+  width: 25%; }
+
+.pt-5 {
+  padding-top: 50px; }
+
+.pb-5 {
+  padding-bottom: 50px; }
+
+.column-5 {
+  width: 20%; }
+
+.pt-6 {
+  padding-top: 60px; }
+
+.pb-6 {
+  padding-bottom: 60px; }
+
+.column-6 {
+  width: 16.6666666667%; }
+
+/* WHILE loop */
+
+/*# sourceMappingURL=output.css.map */

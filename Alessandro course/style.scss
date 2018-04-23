@@ -1,0 +1,136 @@
+/* IMPORTS */
+@import 'partials/reset';
+@import 'partials/variables';
+@import 'partials/mixins';
+
+
+
+/* Starting the commands and style */
+
+.first-class {
+    font-family: 'Times New Roman', sans-serif;
+    font-weight: 500;
+    background: #f00;
+    color: #f7f7f7;
+}
+
+/* Extned the same properties from .first-class selector */
+/* Use --watch to automatically update the changes */
+.second-class {
+    @extend .first-class;
+    border-radius: 20px;
+}
+
+.third-class {
+    color: $primary-color;
+    border-width: $border-width;
+}
+
+/* using indentation for links */
+a {
+    color: $primary-color;
+
+    &:hover {
+        color: $blue-link;
+    }
+
+    &:focus,
+    &:visited {
+        color: $black-link;
+    }
+}
+
+/* Using operations */
+.forth-class {
+    height: $container / 2;
+    padding: $padding;
+    width: $container / 2 + $padding / 2;
+}
+
+/* Make function and pass value */
+@function half-height($first, $second) {
+    @return $container / $first + $padding / 2;
+}
+
+.half {
+    height: half-height(2, 2);
+}
+
+.half2 {
+    height: half-height(2, 2);
+}
+
+/*
+==========================================
+            MIXINS
+==========================================
+*/
+
+/* please note that declaration is separated in the mixins partial file */
+
+/* using stage */
+.translateX {
+    @include translateX;
+}
+
+/* using stage */
+.translateY {
+    @include translateY(14px);
+}
+
+/* using stage */
+.translate3d {
+    /* you can't leave the value empty */
+
+    /* using dynamic value */
+    @include translate3d( 40px );
+
+    /* using default value */
+    @include translate3d();
+}
+
+/*
+==========================================
+            LOOPS
+==========================================
+*/
+
+/* FOR loop */
+
+// Declaring stage
+//@for $var from <start> through <end>
+
+/* using stage */
+@for $space from 1 through 6 {
+
+    $width: percentage( 1 / $space );
+
+    .pt-#{$space} {
+        padding-top: 10px * $space;
+    }
+
+    .pb-#{$space} {
+        padding-bottom: 10px * $space;
+    }
+
+    .column-#{$space} {
+        width: $width;
+    }
+}
+
+/* WHILE loop */
+// syntax: 
+//@while $var something (<, ==, >) int
+
+$num: 1;
+@while $num < 7 {
+    $width: percentage( 1 / $num );
+
+    .class-#{$num} {
+        width: $width;
+    }
+
+    $num: $num + 1;
+}
+
+// EACH loop

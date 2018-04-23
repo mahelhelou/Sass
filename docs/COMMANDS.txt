@@ -43,6 +43,7 @@ Nesting the selectors in Sass
 Using variables
 * using variables in sass allows you to change all values from one place!
 * variables generally built at the top of the sass doc
+
 * Data types of vars in sass
 - Numbers: 1.5, 88, 14px
 - Boleans: true, false
@@ -96,7 +97,7 @@ Mixins: Arguments
 // call the mixin
 @include backface-visibility(hidden);
 
-// Assing a default value of the mixin, will be put if the mixin included without passing a value
+// Assign a default value of the mixin, will be put if the mixin included without passing a value
 // the default value here is: $visibility: hidden
 @mixin backface-visibility($visibility: hidden) {
    backface-visibility: $visibility;

@@ -1,0 +1,9 @@
+.box {
+	$width: 400px;
+	$height: 355px;
+	$background: #f8f8f8;
+
+	width: $width;
+	height: $height;
+	background: $background;
+}

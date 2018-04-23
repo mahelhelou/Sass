@@ -1,0 +1,36 @@
+/* Using Mixins */
+
+/*
+    Mixins used to:
+    - Avdoiding repeative data and prefixes declarations
+    - Avdoing repeating any other repeating data
+*/
+
+/* Declaring the normal mixin */
+@mixin translateX {
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+    transform: translateX(10px);
+}
+
+/* Mixin with a dynamic value */
+/* declaring stage */
+@mixin translateY( $val ) {
+    -webkit-transform: translateY( $val );
+    -moz-transform: translateY( $val );
+    -ms-transform: translateY( $val );
+    -o-transform: translateY( $val );
+    transform: translateY( $val );
+}
+
+/* Mixin with a default value and dynamic value */
+/* declaring stage */
+@mixin translate3d( $val: 25px ) {
+    -webkit-transform: translate3d( $val );
+    -moz-transform: translate3d( $val );
+    -ms-transform: translate3d( $val );
+    -o-transform: translate3d( $val );
+    transform: translate3d( $val );
+}

@@ -1,0 +1,208 @@
+// single line comment
+/* multi line comment */
+
+/* multi line comment processed, single not! */
+
+.read {
+	font-family: serif;
+}
+
+.infobox {
+	width: 200px;
+
+	.message {
+		border: 1px solid red;
+
+		.title {
+			color: red;
+		}
+	}
+
+	.user {
+		border: 2px solid black;
+
+		.title {
+			color: black;
+		}
+	}
+}
+
+
+/* to compile the direct child of a parent selector */
+
+/* putting the > here because we don't repeat the sign with direct children */
+
+.infobox > {
+	.message {
+		border: 1px solid red;
+
+		> .title {
+			color: red;
+		}
+	}
+
+	.user {
+		border: 1px solid black;
+
+		> .title {
+			color: black;
+		}
+	}
+}
+
+
+.infobox {
+	color: blue;
+
+	.user & {
+		color: gray;
+	}
+}
+
+.message {
+	color: gray;
+
+	&.new {
+		color: red;
+	}
+}
+
+.infobox {
+	.user & .message {
+		content: "selector is '.user .infobox .message'";
+	}
+}
+
+/* using arithmetic operators with variables */
+
+$width: 500px;
+$sidebar-percentage: 0.2;
+
+page {
+	width: $width;
+
+	#sidebar {
+		width: $width * $sidebar-percentage;
+	}
+
+	#content {
+		width: (1 - $sidebar-percentage) * $width;
+	}
+
+
+}
+
+/* using extend for extending buttons */
+.blue_button {
+	background: #369;
+	color: white;
+	padding: 20px;
+	font-weight: bold;
+}
+
+.checkout_button {
+	@extend .blue_button;
+	font-size: 20px;
+	background: darken(#369, 10%);
+}
+
+/* defining mixin */
+
+@mixin blue_text { /* the name of the mixin is not a selector or class!! */
+	color: #369;
+	font-family: helvetica, Arial, sans-serif;
+	font-size: 20px;
+	font-variant: small-caps;
+}
+
+.blue_text {
+	@include blue_text;
+}
+
+.product_title {
+	@include blue_text;
+}
+
+/* define mixin with variables */
+@mixin blue_text ($size) {
+	color: #369;
+	font-family: helvetica, Arial, sans-serif;
+	font-size: $size;
+	font-variant: small-caps;
+}
+
+/* then add the value of the font-size after including mixin */
+.blog_title {
+	@include blue_text (40px);
+}
+
+/* passing multiple variables */
+/* if there's a default value, put it at the end of mixin vars */
+@mixin blue_text ($color, $font, $transform, $size: 60px) {
+	color: $color;
+	font-family: $font;
+	text-transform: $transform;
+	font-size: $size;
+}
+
+.another_title {
+	@include blue_text (#f00, Consolas, uppercase, 100px);
+}
+
+/* using cross browser border-radius */
+@mixin bordered_radius ($color: red, $width: 5px, $radius: 10px) {
+	border: $color $width solid;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+	
+}
+
+.green_btn {
+	@extend .blue_button;
+	@include bordered_radius;
+}
+
+/* mixin with dynamic variables */
+@mixin car_make($car_make, $car_color) {
+	// set the $car_make with "_make" at the end as a class
+	car.#{$car_make}_make {
+		color: $car_color;
+		width: 100px;
+		.img {
+			background: url('img/#{$car_make}/#{$car_color}.png')
+		}
+	}
+}
+
+@include car_make ("volvo", "green");
+@include car_make ("bmw", "black");
+
+/* Using @each to stop repeating common tasks */
+
+@each $member in thom, jonny, colin, phil {
+	.#{$member}_picture {
+		background: url('images/member-img.png');
+	}
+}
+
+/* build mixin with @if */
+
+@mixin country_color($country) {
+	@if ($country == france) {
+		color: blue;
+	} @else if ($country == spain) {
+		color: green;
+	} @else {
+		color: red;
+	}
+}
+
+.england {
+	@include country_color(england);
+}
+
+.france {
+	@include country_color(france);
+}

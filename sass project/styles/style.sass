@@ -1,0 +1,58 @@
+// Starting the sass doc
+
+// Variables
+$black: #333
+$pale: #d2e1dd
+$pink: #c69
+$blue: #036
+
+$font-stack: 'Andale Mono', Monospace
+$font-size: 18px
+
+// Mixins
+=circleThing($radius, $width, $height, $bg, $color)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+  height: $height
+  width: $width
+
+  line-height: $height
+  text-aling: center
+
+  background: $bg
+  color: $color
+
+  margin: 0 auto
+
+// styles
+body
+  background: $pale
+  color: $black
+  font-family: $font-stack
+  font-size: $font-size
+
+.cv
+  background: white
+  width: 760px
+  margin: -60px auto 0
+  padding: 40px
+  box-sizing: border-box
+  position: relative
+  z-index: -2
+
+header
+  +circleThing(100%, 200px, 200px, $blue, white)
+
+  h1
+    font-size: $font-size + 34
+    text-align: center
+
+footer
+  +circleThing(100%, 150px, 150px, $black, $pale)
+  font-size: $font-size
+  position: relative
+  z-index: -4
+  margin: -60px auto 0

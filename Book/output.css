@@ -1,0 +1,132 @@
+/* multi line comment */
+/* multi line comment processed, single not! */
+.read {
+  font-family: serif; }
+
+.infobox {
+  width: 200px; }
+  .infobox .message {
+    border: 1px solid red; }
+    .infobox .message .title {
+      color: red; }
+  .infobox .user {
+    border: 2px solid black; }
+    .infobox .user .title {
+      color: black; }
+
+/* to compile the direct child of a parent selector */
+/* putting the > here because we don't repeat the sign with direct children */
+.infobox > .message {
+  border: 1px solid red; }
+  .infobox > .message > .title {
+    color: red; }
+.infobox > .user {
+  border: 1px solid black; }
+  .infobox > .user > .title {
+    color: black; }
+
+.infobox {
+  color: blue; }
+  .user .infobox {
+    color: gray; }
+
+.message {
+  color: gray; }
+  .message.new {
+    color: red; }
+
+.user .infobox .message {
+  content: "selector is '.user .infobox .message'"; }
+
+/* using arithmetic operators with variables */
+page {
+  width: 500px; }
+  page #sidebar {
+    width: 100px; }
+  page #content {
+    width: 400px; }
+
+/* using extend for extending buttons */
+.blue_button, .checkout_button, .green_btn {
+  background: #369;
+  color: white;
+  padding: 20px;
+  font-weight: bold; }
+
+.checkout_button {
+  font-size: 20px;
+  background: #264d73; }
+
+/* defining mixin */
+.blue_text {
+  /* the name of the mixin is not a selector or class!! */
+  color: #369;
+  font-family: helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-variant: small-caps; }
+
+.product_title {
+  /* the name of the mixin is not a selector or class!! */
+  color: #369;
+  font-family: helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-variant: small-caps; }
+
+/* define mixin with variables */
+/* then add the value of the font-size after including mixin */
+.blog_title {
+  color: #369;
+  font-family: helvetica, Arial, sans-serif;
+  font-size: 40px;
+  font-variant: small-caps; }
+
+/* passing multiple variables */
+/* if there's a default value, put it at the end of mixin vars */
+.another_title {
+  color: #f00;
+  font-family: Consolas;
+  text-transform: uppercase;
+  font-size: 100px; }
+
+/* using cross browser border-radius */
+.green_btn {
+  border: red 5px solid;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px; }
+
+/* mixin with dynamic variables */
+car.volvo_make {
+  color: "green";
+  width: 100px; }
+  car.volvo_make .img {
+    background: url("img/volvo/green.png"); }
+
+car.bmw_make {
+  color: "black";
+  width: 100px; }
+  car.bmw_make .img {
+    background: url("img/bmw/black.png"); }
+
+/* Using @each to stop repeating common tasks */
+.thom_picture {
+  background: url("images/member-img.png"); }
+
+.jonny_picture {
+  background: url("images/member-img.png"); }
+
+.colin_picture {
+  background: url("images/member-img.png"); }
+
+.phil_picture {
+  background: url("images/member-img.png"); }
+
+/* build mixin with @if */
+.england {
+  color: red; }
+
+.france {
+  color: blue; }
+
+/*# sourceMappingURL=output.css.map */

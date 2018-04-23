@@ -1,0 +1,67 @@
+Sass book
+
+// getting help
+* gogole sass group
+* sass-lang.com
+
+// start with sass
+* gem install sass
+
+// any valid css is a valid sass
+
+Withoud adding output.css, you can convert the sass or scss file into .css file using the command
+>sass input.scss output.css
+(or)
+Watching the file and keep updating .css file automatically
+>sass --watch output.scss:output.css
+
+_and you can convert all sass/scss folder files into folder with css files
+>sass --watch stylesheets/sass:stylesheets/css
+
+// different styles for css output
+>sass --style $styleName
+
+The style names:
+* nested (default)
+* expanded (beautify)
+* compound
+* compressed (.min): great for mobile devices
+
+Variables:
+* Global Vars: defined in its single line, and can be used for the entire stylesheets
+* Scoped: appears within a selector and applies only for parent & child
+* variables are always declared at the top of sass doc
+
+You can use variables like this
+$width: 10px;
+$double-width: $width * 2;
+$half-width: $width / 2;
+$width-plus: $width + 2;
+$width-minus: $width - 2;
+
+Separating files is amazing for the load of the web page
+* vaiables.scss
+* mixin.scss
+* colors.scss
+
+@import "mixin" // you don't need to include the (.scss)
+_mixin: when you name the file (if you don't want to be compiled as a css alone!)
+mixin : when you import it @import "mixin"
+
+building font family library (pg 28)
+
+// Specifying variables with lists of values for font family
+$helvetica: "helvetica neue", Arial, helvetica, freesans, "liberation sans", "numbus sans", sans-serif;
+
+Keeping Semantic
+* Don't name button like a blue_button, you can name it checkout_button
+
+Extend
+@extend clones the style of class or ID and adds it to another
+
+Mixins
+* Perfect solution to avoid repeating the code again & again
+_to reuse it, we can type @include
+
+// To create dynamic vars with mixin
+* use #($myvar): this will create a dynamic variable for the mixin

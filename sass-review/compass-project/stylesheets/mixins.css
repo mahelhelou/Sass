@@ -1,0 +1,58 @@
+/* line 8, ../sass/mixins.scss */
+.product-title {
+  color: #336699;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 20px;
+  font-variant: small-caps;
+}
+
+/* Mixins with local variables */
+/* line 19, ../sass/mixins.scss */
+.heading-news-title {
+  color: #336699;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 2rem;
+  font-variant: small-caps;
+}
+
+/* Mixins with default values */
+/* line 30, ../sass/mixins.scss */
+.text_with_def_value {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  font-size: 22px;
+}
+
+/* change the default value */
+/* line 35, ../sass/mixins.scss */
+.change-def-value {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #c6c6c6;
+  font-size: 6rem;
+}
+
+/* mixins of rounded borders for different browersers */
+/* line 48, ../sass/mixins.scss */
+.header {
+  -moz-border-radius: 5px 5px;
+  -webkit-border-radius: 5px 5px;
+  -khtml-border-radius: 5px 5px;
+  -o-border-radius: 5px 5px;
+  border-radius: 5px 5px;
+  border: 3px #336699 solid;
+}
+
+/* Mixin for cross browersers opacity */
+/* line 57, ../sass/mixins.scss */
+h1 {
+  filter: alpha(opacity=60);
+  /* IE 5-9+ */
+  opacity: 0.6;
+}
+
+/* changing the value of filter */
+/* line 66, ../sass/mixins.scss */
+p {
+  filter: alpha(opacity=2000);
+  opacity: 20;
+}

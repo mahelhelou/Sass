@@ -1,0 +1,13 @@
+.blue_button {
+    background: #336699;
+    font-weight: bold;
+    color: white;
+    padding: 5px;
+}
+
+/* this will copy the blue button style into checkout style */
+
+.checkout_button {
+    @extend .blue_button;
+    color: darken(white, 20%);
+}

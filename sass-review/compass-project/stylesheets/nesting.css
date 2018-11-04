@@ -1,0 +1,63 @@
+/* line 1, ../sass/nesting.scss */
+.heading {
+  width: 200px;
+  height: 300px;
+}
+/* line 5, ../sass/nesting.scss */
+.heading .narrow {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
+/* line 9, ../sass/nesting.scss */
+.heading .narrow .on-board {
+  width: 20px;
+  height: 50px;
+  color: red;
+}
+/* line 16, ../sass/nesting.scss */
+.heading .title {
+  margin: 15px;
+  padding: 5px;
+}
+
+/* using direct chilld */
+/* line 24, ../sass/nesting.scss */
+.infobox > .message {
+  border: 1px solid red;
+}
+/* line 27, ../sass/nesting.scss */
+.infobox > .message > .title {
+  color: red;
+}
+/* line 32, ../sass/nesting.scss */
+.infobox > .user {
+  border: 1px solid black;
+}
+/* line 35, ../sass/nesting.scss */
+.infobox > .user > .title {
+  color: black;
+}
+
+/* using & */
+/* line 42, ../sass/nesting.scss */
+.infobox {
+  color: blue;
+}
+/* line 45, ../sass/nesting.scss */
+.user .infobox {
+  color: gray;
+}
+
+/* line 50, ../sass/nesting.scss */
+.message {
+  color: gray;
+}
+/* line 53, ../sass/nesting.scss */
+.message.new {
+  color: red;
+}
+
+/* line 59, ../sass/nesting.scss */
+.user .infobox .message {
+  content: "Selector is '.user .infobox .message'";
+}

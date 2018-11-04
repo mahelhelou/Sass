@@ -1,0 +1,39 @@
+.main {
+  color: #336699;
+  font-size: 15px;
+}
+@media print {
+  .main {
+    font-size: 10px;
+  }
+}
+
+.main {
+  color: #336699;
+  font-size: 15px;
+}
+@media screen and (max-width: 320px) {
+  .main {
+    font-size: 35px;
+  }
+}
+
+.main {
+  color: #336699;
+  font-size: 15px;
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  .main {
+    font-size: 25px;
+  }
+}
+
+.main {
+  color: #336699;
+  font-size: 15px;
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  .main {
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,14 @@
+/* line 5, ../sass/variables_example.scss */
+body {
+  background: #369;
+}
+/* line 9, ../sass/variables_example.scss */
+body #wrapper {
+  width: 300px;
+  background: white;
+  border: #eee;
+}
+/* line 14, ../sass/variables_example.scss */
+body #wrapper h1 {
+  color: #369;
+}

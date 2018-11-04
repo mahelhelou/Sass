@@ -1,0 +1,29 @@
+/* lightening color */
+/* line 4, ../sass/color_func.scss */
+#page {
+  color: #6699cc;
+}
+
+/* darknening color */
+/* line 9, ../sass/color_func.scss */
+body {
+  color: black;
+}
+
+/* saturate */
+/* line 14, ../sass/color_func.scss */
+.sidebar {
+  color: black;
+}
+
+/* adjust hue */
+/* line 19, ../sass/color_func.scss */
+.sidebar {
+  color: black;
+}
+
+/* mixing colors */
+/* line 24, ../sass/color_func.scss */
+body {
+  color: maroon;
+}

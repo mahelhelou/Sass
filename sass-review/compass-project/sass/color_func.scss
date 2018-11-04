@@ -1,0 +1,26 @@
+$main-color: #333;
+
+/* lightening color */
+#page {
+    color: lighten(#336699, 20%);
+}
+
+/* darknening color */
+body {
+    color: darken($main-color, 80%);
+}
+
+/* saturate */
+.sidebar {
+    color: saturate(#000, 20%);
+}
+
+/* adjust hue */
+.sidebar {
+    color: adjust-hue(#000, 180);
+}
+
+/* mixing colors */
+body {
+    color: mix(#000, #f00);
+}

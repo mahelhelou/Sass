@@ -1,0 +1,13 @@
+/* line 1, ../sass/extend.scss */
+.blue_button, .checkout_button {
+  background: #336699;
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+}
+
+/* this will copy the blue button style into checkout style */
+/* line 10, ../sass/extend.scss */
+.checkout_button {
+  color: #cccccc;
+}

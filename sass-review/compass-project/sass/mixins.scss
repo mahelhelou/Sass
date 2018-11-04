@@ -1,0 +1,68 @@
+@mixin blue_text {
+    color: #336699;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 20px;
+    font-variant: small-caps;
+}
+
+.product-title {
+    @include blue_text;
+}
+
+/* Mixins with local variables */
+@mixin blue_text($size) {
+    color: #336699;
+    font-family: helvetica, arial, sans-serif;
+    font-size: $size;
+    font-variant: small-caps; }
+
+.heading-news-title {
+    @include blue_text(2rem);
+}
+
+/* Mixins with default values */
+@mixin text_with_def_value($fontSize: 22px, $color: #333) {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: $color;
+    font-size: $fontSize;
+}
+
+.text_with_def_value {
+    @include text_with_def_value();
+}
+
+/* change the default value */
+.change-def-value {
+    @include text_with_def_value(6rem, #c6c6c6);
+}
+
+/* mixins of rounded borders for different browersers */
+@mixin rounded_borders($color, $width: 5px, $rounding: 5px) {
+  -moz-border-radius: $rounding $rounding;
+  -webkit-border-radius: $rounding $rounding; 
+  -khtml-border-radius: $rounding $rounding;
+  -o-border-radius: $rounding $rounding;
+  border-radius: $rounding $rounding;
+  border: $width $color solid; }
+
+  .header {
+      @include rounded_borders(#336699, 3px);
+  }
+
+  /* Mixin for cross browersers opacity */
+  @mixin opacity($opacity) {
+    filter: alpha(opacity=#{$opacity}); /* IE 5-9+ */
+    opacity: $opacity * 0.01; }
+
+    h1 {
+        @include opacity(60);
+    }
+
+    /* changing the value of filter */
+    @mixin opacity2($opacity) {
+        filter: alpha(opacity=#{$opacity*100}); // IE 5-9+
+        opacity: $opacity; }
+
+    p {
+        @include opacity2(20);
+    }

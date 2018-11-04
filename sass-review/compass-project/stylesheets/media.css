@@ -1,0 +1,47 @@
+/* line 1, ../sass/media.scss */
+.main {
+  color: #336699;
+  font-size: 15px;
+}
+@media print {
+  /* line 1, ../sass/media.scss */
+  .main {
+    font-size: 10px;
+  }
+}
+
+/* line 10, ../sass/media.scss */
+.main {
+  color: #336699;
+  font-size: 15px;
+}
+@media screen and (max-width: 320px) {
+  /* line 10, ../sass/media.scss */
+  .main {
+    font-size: 35px;
+  }
+}
+
+/* line 19, ../sass/media.scss */
+.main {
+  color: #336699;
+  font-size: 15px;
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  /* line 19, ../sass/media.scss */
+  .main {
+    font-size: 25px;
+  }
+}
+
+/* line 28, ../sass/media.scss */
+.main {
+  color: #336699;
+  font-size: 15px;
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  /* line 28, ../sass/media.scss */
+  .main {
+    font-size: 25px;
+  }
+}
